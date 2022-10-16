@@ -1,0 +1,5 @@
+**/*.md
+**/*.svg
+**/*.css.d.ts
+**/*.less.d.ts
+package.json

@@ -1,0 +1,169 @@
+// cover some element-ui styles
+
+@import "element-plus/dist/index.css";
+
+.el-breadcrumb__inner,
+.el-breadcrumb__inner a {
+	font-weight: 400 !important;
+	color: #999;
+}
+
+.el-upload {
+	input[type="file"] {
+		display: none !important;
+	}
+}
+
+.el-upload__input {
+	display: none;
+}
+
+// to fixed https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+	position: relative;
+	left: 0;
+	margin: 0 auto;
+	transform: none;
+
+	&__header {
+		padding-bottom: 0px;
+		line-height: 1;
+	}
+
+	&__body {
+		padding: 20px;
+	}
+
+	&__footer:empty {
+		display: none;
+	}
+}
+
+// refine element ui upload
+.file-upload {
+	.el-upload--picture-card i {
+		color: #dcdfe6;
+	}
+	.el-upload {
+		.el-upload-dragger {
+			width: 100%;
+			height: 200px;
+		}
+	}
+}
+
+// dropdown
+.el-dropdown-menu {
+	a {
+		display: block;
+	}
+}
+
+// to fix el-date-picker css style
+.el-range-separator {
+	box-sizing: content-box;
+}
+
+// message-box
+.el-message-box {
+	vertical-align: initial;
+}
+
+// el-table
+.el-table {
+	&__header-wrapper {
+		th {
+			padding: 12px 0;
+		}
+	}
+
+	td {
+		padding: 8px 0;
+	}
+}
+
+.el-dialog {
+	.el-table {
+		td {
+			padding: 7px 0 !important;
+		}
+	}
+}
+
+// .el-pagination
+.el-pagination {
+	font-weight: normal;
+	background-color: transparent;
+}
+
+// el-card
+.el-card ~ .el-card {
+	margin-bottom: 32px;
+}
+
+.el-card--no-header-line {
+	.el-card__header {
+		border-bottom: none;
+	}
+}
+
+.el-submenu__title {
+	height: 64px;
+	font-size: 16px;
+}
+
+.el-image {
+	vertical-align: middle;
+}
+
+// .el-input-number
+.el-input {
+	.el-input__inner[type="number"] {
+		text-align: left;
+
+		&::-webkit-inner-spin-button {
+			display: none;
+		}
+	}
+}
+
+// .el-input-number
+.el-input-number {
+	.el-input__inner {
+		text-align: left;
+	}
+}
+
+// .el-radio-group
+.el-radio-group {
+	&--text {
+		.el-radio {
+			position: relative;
+			margin-right: 10px;
+			font-size: 14px;
+
+			&::after {
+				position: absolute;
+				top: 0;
+				right: -10px;
+				bottom: 0;
+				width: 1px;
+				content: "";
+				background-color: #ededed;
+			}
+
+			&:last-child::after {
+				display: none;
+			}
+
+			&__input {
+				display: none;
+			}
+		}
+	}
+}
+
+// .el-tooltip__popper
+.el-tooltip__popper {
+	max-width: 500px;
+}

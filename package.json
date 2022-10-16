@@ -1,0 +1,94 @@
+{
+	"name": "vue3-vite-elementPlus-admin",
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc --noEmit && vite build",
+		"serve": "vite preview",
+		"ls-lint": "ls-lint",
+		"eslint": "eslint src --fix --ext .vue,.ts,.tsx",
+		"stylelint": "stylelint \"src/**/*.{vue,css,scss}\" --quiet --fix",
+		"lint": "npm run ls-lint && npm run eslint && npm run stylelint",
+		"publish:dev": "sftp-publish-tool -c dist -e dev",
+		"publish:test": "sftp-publish-tool -c dist -e test"
+	},
+	"peerDependencies": {
+		"dayjs": "1.10.5",
+		"lodash": "4.17.21"
+	},
+	"dependencies": {
+		"axios": "^0.27.2",
+		"element-plus": "^1.1.0-beta.24",
+		"file-saver": "^2.0.5",
+		"normalize.css": "^8.0.1",
+		"nprogress": "^0.2.0",
+		"path-browserify": "^1.0.1",
+		"path-to-regexp": "^6.2.0",
+		"qs": "^6.10.1",
+		"vue": "^3.2.20",
+		"vue-router": "^4.0.12",
+		"vuex": "^4.0.2"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^13.1.0",
+		"@commitlint/config-conventional": "^13.1.0",
+		"@ls-lint/ls-lint": "^1.10.0",
+		"@types/file-saver": "^2.0.3",
+		"@types/node": "^16.4.10",
+		"@types/nprogress": "^0.2.0",
+		"@types/qs": "^6.9.7",
+		"@typescript-eslint/eslint-plugin": "^4.29.0",
+		"@typescript-eslint/parser": "^4.29.0",
+		"@vitejs/plugin-vue": "^1.2.5",
+		"@vitejs/plugin-vue-jsx": "^1.1.7",
+		"@vue/compiler-sfc": "^3.2.20",
+		"eslint": "^7.32.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^3.4.0",
+		"eslint-plugin-simple-import-sort": "^7.0.0",
+		"eslint-plugin-vue": "^7.15.1",
+		"husky": "^7.0.1",
+		"less": "^4.1.2",
+		"less-loader": "^10.2.0",
+		"lint-staged": "^11.1.1",
+		"prettier": "^2.3.2",
+		"sftp-publish-tool": "^1.0.0",
+		"stylelint": "^13.13.1",
+		"stylelint-config-prettier": "^8.0.2",
+		"stylelint-config-recess-order": "^2.4.0",
+		"stylelint-prettier": "^1.2.0",
+		"typescript": "^4.4.4",
+		"vite": "^2.6.12",
+		"vue-tsc": "^0.0.24"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not dead"
+	],
+	"engines": {
+		"node": ">=14.15.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"*.{vue,ts,js,scss}": [
+			"prettier --write",
+			"git add"
+		]
+	},
+	"keywords": [
+		"vue3",
+		"vite",
+		"element-plus"
+	],
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:Jesse121/vue3-vite-elementPlus-admin.git"
+	}
+}
