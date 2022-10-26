@@ -3901,6 +3901,11 @@ vfile@^4.0.0:
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
 
+vite-plugin-vue-setup-extend-plus@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmmirror.com/vite-plugin-vue-setup-extend-plus/-/vite-plugin-vue-setup-extend-plus-0.1.0.tgz#3a7c53208c88736734a39bbe17d7ee36e226ab74"
+  integrity sha512-pa27KIsHIBvBMv4xz9uB3UCfAuP2tr7PLlFhCS9vw+aXd326LEHsvhqd3hCQDOR5MjlQVyQH6vwuGr3u+KRiiw==
+
 vite@^2.6.12:
   version "2.6.12"
   resolved "https://registry.npmmirror.com/vite/download/vite-2.6.12.tgz#17d819ca6766f59a7609a50ab8a2d2cdc05f1523"
