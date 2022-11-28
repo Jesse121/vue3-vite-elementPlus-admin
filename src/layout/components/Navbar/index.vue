@@ -23,7 +23,7 @@
 							<router-link to="/password">修改密码</router-link>
 						</el-dropdown-item>
 						<el-dropdown-item divided @click="logout">
-							<span style="display: block">退出</span>
+							<span>退出</span>
 						</el-dropdown-item>
 					</el-dropdown-menu>
 				</template>

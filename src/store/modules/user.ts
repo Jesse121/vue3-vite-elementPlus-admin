@@ -20,7 +20,7 @@ export interface IUserState {
 const getDefaultState = () => {
 	return {
 		token: getToken(),
-		name: getName(),
+		name: getName() || "admin",
 		routes: undefined,
 		avatar: "",
 		introduction: "",

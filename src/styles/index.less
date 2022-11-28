@@ -17,9 +17,9 @@ label {
 }
 
 html {
-	overflow: overlay;
-	height: 100%;
 	box-sizing: border-box;
+	height: 100%;
+	overflow: overlay;
 }
 
 #app {
@@ -41,8 +41,8 @@ a,
 a:focus,
 a:hover {
 	color: inherit;
-	cursor: pointer;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 div:focus {
@@ -50,10 +50,10 @@ div:focus {
 }
 
 img {
+	vertical-align: middle;
+	user-select: none;
 	-webkit-user-drag: none;
 	user-drag: none;
-	user-select: none;
-	vertical-align: middle;
 }
 
 .fl {
@@ -68,9 +68,9 @@ img {
 		display: block;
 		height: 0;
 		clear: both;
-		content: " ";
 		font-size: 0;
 		visibility: hidden;
+		content: " ";
 	}
 }
 
@@ -89,7 +89,6 @@ img {
 	background-color: transparent;
 	border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:vertical {
 	height: 10px;
 	background-color: rgba(0, 0, 0, 0.2);
