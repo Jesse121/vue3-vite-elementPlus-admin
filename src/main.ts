@@ -2,17 +2,15 @@
 import "@/styles/index.less";
 import "normalize.css/normalize.css";
 
-import dayjs from "dayjs";
-import ElementPlus, { ElLoading, ElMessage, ElMessageBox, ElNotification } from "element-plus";
-import { createApp } from "vue";
-import { Store } from "vuex";
-
 import TableColumn from "@/components/TableColumn/index.vue";
-
-import App from "./App.vue";
+import ElementPlus, { ElLoading, ElMessage, ElMessageBox, ElNotification } from "element-plus";
 import SvgIcon from "./components/SvgIcon/index.vue";
+import { createApp } from "vue";
+import App from "./App.vue";
 import router from "./router";
+import { Store } from "vuex";
 import store, { IState } from "./store";
+import dayjs from "dayjs";
 
 declare module "@vue/runtime-core" {
 	interface ComponentCustomProperties {
