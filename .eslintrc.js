@@ -4,8 +4,13 @@ module.exports = {
 		browser: true,
 		node: true
 	}, //定义eslint依赖的插件
-	plugins: ["@typescript-eslint", "prettier", "simple-import-sort"], //定义文件继承的代码规范
-	extends: ["plugin:vue/vue3-recommended", "plugin:prettier/recommended"],
+	plugins: ["@typescript-eslint", "prettier"], //定义文件继承的代码规范
+	extends: [
+		"plugin:vue/vue3-recommended",
+		"plugin:prettier/recommended",
+		"plugin:import/recommended",
+		"plugin:import/typescript"
+	],
 	parserOptions: {
 		//解析ts文件
 		parser: "@typescript-eslint/parser",
@@ -13,6 +18,12 @@ module.exports = {
 		ecmaVersion: 2020,
 		ecmaFeatures: {
 			tsx: true // 允许解析TSX
+		}
+	},
+	settings: {
+		"import/resolver": {
+			typescript: true,
+			node: true
 		}
 	},
 	rules: {
@@ -39,10 +50,38 @@ module.exports = {
 		],
 		"vue/require-default-prop": "off",
 		"vue/no-v-html": "off",
-		"sort-imports": "off",
-		"import/order": "off",
-		"simple-import-sort/imports": "error",
-		"simple-import-sort/exports": "error"
+		"import/order": [
+			"error",
+			{
+				// 对导入模块进行分组
+				groups: [
+					"builtin", // 内置模块
+					"external", // 外部模块
+					[
+						"parent", //父节点依赖
+						"sibling" //兄弟依赖
+					],
+					"internal", //内部引用
+					"index", // index文件
+					"type", //类型文件
+					"unknown"
+				],
+				//通过路径自定义分组
+				pathGroups: [
+					{
+						pattern: "@/**", // 把@开头的应用放在internal分组后面
+						group: "external",
+						position: "after"
+					}
+				],
+				// 是否开启独特组，用于区分自定义规则分组和其他规则分组
+				distinctGroup: true,
+				// 每个分组之间换行
+				"newlines-between": "always",
+				// 相同分组排列规则
+				alphabetize: { order: "asc" }
+			}
+		]
 	},
 	overrides: [
 		{
