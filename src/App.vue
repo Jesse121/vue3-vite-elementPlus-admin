@@ -6,4 +6,13 @@
 
 <script setup lang="ts">
 import locale from "element-plus/lib/locale/lang/zh-cn";
+import { onMounted } from "vue";
+
+import createWatermark from "@/utils/createWatermark";
+
+onMounted(() => {
+	createWatermark({
+		content: "jesse"
+	});
+});
 </script>
